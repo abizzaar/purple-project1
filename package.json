@@ -1,0 +1,10 @@
+{
+  "name": "mern-comment-box",
+  "version": "1.0.0",
+  "description": "tutorial project for MERN stack in EECS 497",
+  "main": "index.js",
+  "repository": "https://github.com/497-fall2018/purple-project1.git",
+  "author": "team purple",
+  "license": "MIT",
+  "private": false
+}
