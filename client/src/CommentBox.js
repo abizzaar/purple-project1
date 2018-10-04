@@ -38,15 +38,45 @@ class CommentBox extends Component {
       });
   }
 
+  onChangeText = (e) => {
+    const newState = { ...this.state };
+    newState[e.target.name] = e.target.value;
+    this.setState(newState);
+  }
+
+  submitComment = (e) => {
+    e.preventDefault();
+    const { author, text } = this.state;
+    if (!author || !text) return;
+    fetch('/api/comments', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ author, text }),
+    }).then(res => res.json()).then((res) => {
+      if (!res.success) this.setState({ error: res.error.message || res.error });
+      else this.setState({ author: '', text: '', error: null });
+    });
+  }
+
   render() {
     return (
       <div className="container">
         <div className="comments">
           <h2>Comments:</h2>
-          <CommentList data={this.state.data} />
+          <Comment
+            author={comment.author}
+            key={comment._id}
+            id={comment._id}
+            timestamp={comment.updatedAt}
+          />
         </div>
         <div className="form">
-          <CommentForm author={this.state.author} text={this.state.text} />
+          <CommentForm
+                author={this.state.author}
+                text={this.state.text}
+                handleChangeText={this.onChangeText}
+                handleSubmit={this.submitComment}
+              />
         </div>
         {this.state.error && <p>{this.state.error}</p>}
       </div>
