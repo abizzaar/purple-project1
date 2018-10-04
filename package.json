@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "description": "tutorial project for MERN stack in EECS 497",
   "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:server": "cd backend && nodemon server.js --exec babel-node --presets es2015,stage-0",
+    "start:client": "cd client && yarn start",
+    "start:dev": "concurrently \"yarn start:server\" \"yarn start:client\""
+  },
   "repository": "https://github.com/497-fall2018/purple-project1.git",
   "author": "team purple",
   "license": "MIT",
