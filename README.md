@@ -1,7 +1,7 @@
 Facebook Comment Box with the MERN Stack
 ===================
 
-[Link to the Tutorial](https://medium.com/@bryantheastronaut/ok-here-we-go-b9f683c5a00c)
+[Link to Bryan Gilbraith's Tutorial](https://medium.com/@bryantheastronaut/ok-here-we-go-b9f683c5a00c)
 
 *MERN: a software stack of free and open-source JS software for web development consisting of MongoDB, Express.js, React.js, Node.js.*
 
