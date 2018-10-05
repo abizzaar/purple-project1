@@ -27,18 +27,6 @@ Technologies Used:
 
 Running the App:
 ---------
-To run the React web app on your local machine:
-
-```
-cd client
-yarn
-yarn start
-```
-To run the server on your local machine:
-
-```
-cd backend
-```
 
 `$ yarn start:server` will only start the backend server.
 `$ yarn start:client` will start the React app
