@@ -5,6 +5,7 @@ Facebook Comment Box with the MERN Stack
 
 *MERN: a software stack of free and open-source JS software for web development consisting of MongoDB, Express.js, React.js, Node.js.*
 
+
 Technologies Used:
 ---------
 1. **yarn** (package manager, can also use npm)
@@ -24,6 +25,8 @@ Technologies Used:
 15. **Postman** (to validate API requests)
 
 
+Running the App:
+---------
 To run the React web app on your local machine:
 
 ```
