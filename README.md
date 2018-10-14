@@ -29,7 +29,9 @@ Running the App:
 ---------
 
 `$ yarn start:server` will only start the backend server.
-`$ yarn start:client` will start the React app
-`$ yarn start:dev` will start both the React web app and backend server both simultaneously
+
+`$ yarn start:client` will start the React app.
+
+`$ yarn start:dev` will start both the React web app and backend server both simultaneously.
 
 
