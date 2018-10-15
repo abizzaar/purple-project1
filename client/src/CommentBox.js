@@ -51,9 +51,14 @@ class CommentBox extends Component {
   onChangeText = (e='') => {
     const newState = { ...this.state };
     newState[e.target.name] = e.target.value;
-    this.setState(newState);
     let comment = e.target.value;
-    this.updateToxicity(comment);
+    if(comment.length == 0){
+      newState.toxicity=0;
+      console.log( comment);
+    }else{
+      this.updateToxicity(comment);
+    }
+    this.setState(newState);
   }
 
   onUpdateComment = (id) => {
