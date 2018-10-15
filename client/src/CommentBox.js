@@ -43,7 +43,7 @@ class CommentBox extends Component {
         this.state.toxicity = res.value;
         console.log(res.value);
       } else {
-        console.log("there was an issue getting the toxicity");
+        console.log("There was an issue getting the toxicity");
       }
     });
   }
@@ -51,9 +51,14 @@ class CommentBox extends Component {
   onChangeText = (e='') => {
     const newState = { ...this.state };
     newState[e.target.name] = e.target.value;
-    this.setState(newState);
     let comment = e.target.value;
-    this.updateToxicity(comment);
+    if(comment.length == 0){
+      newState.toxicity=0;
+      console.log( comment);
+    }else{
+      this.updateToxicity(comment);
+    }
+    this.setState(newState);
   }
 
   onUpdateComment = (id) => {
@@ -128,7 +133,7 @@ class CommentBox extends Component {
     return (
       <div className="container">
         <div className="comments">
-          <h2>Comments:</h2>
+          <h2>Thoughts?</h2>
           <CommentList
             data={this.state.data}
             handleDeleteComment={this.onDeleteComment}
