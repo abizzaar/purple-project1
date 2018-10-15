@@ -18,7 +18,7 @@ const Comment = props => (
           <a onClick={() => { props.handleUpdateComment(props.id); }}>update</a>
           <a onClick={() => { props.handleDeleteComment(props.id); }}>delete</a>
         </div>
-        <div>
+        <div className="toxicityWords">
           <span>Toxicity: &nbsp; </span>
           <span>{Math.round(props.toxicity * 100) / 100}</span>
         </div>

@@ -47,6 +47,11 @@
   border-radius: 50%;
 }
 
+.topicBox {
+  background-color: #414042;
+  color: white;
+  padding: 2rem 2rem;
+}
 
 .singleCommentContent h3 {
   margin: 0;
@@ -73,10 +78,15 @@
 
 .singleCommentButtons > div:last-child {
   display: flex;
-  font-size: 10px;
   margin-left: 1rem;
-  font-weight: bold;
 }
+
+.toxicityWords {
+  font-size: 15px;
+  font-weight: bold;
+  color: #00AEEF;
+}
+
 
 .blueColor {
 

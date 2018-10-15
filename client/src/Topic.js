@@ -15,7 +15,7 @@ class Topic extends Component {
       vps.push(<div key={i}>{this.viewpoints[i]}</div>)
     };
     return (
-      <div>
+      <div className="topicBox">
         <h1>{this.topic}</h1>
         {vps}
       </div>
