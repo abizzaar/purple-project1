@@ -21,6 +21,10 @@ class CommentBox extends Component {
 
   componentDidMount() {
     this.loadCommentsFromServer();
+    const { author, text, updateId } = this.state;
+    if (!author && !text) {
+      this.state.toxicity=0;
+    }
     if (!this.pollInterval) {
       this.pollInterval = setInterval(this.loadCommentsFromServer, 2000);
     }
@@ -54,10 +58,16 @@ class CommentBox extends Component {
     let comment = e.target.value;
     if(comment.length == 0){
       newState.toxicity=0;
-      console.log( comment);
+      console.log(comment);
     }else{
       this.updateToxicity(comment);
     }
+    this.setState(newState);
+  }
+
+  onChangeAuthor = (e='') => {
+    const newState = { ...this.state };
+    newState[e.target.name] = e.target.value;
     this.setState(newState);
   }
 
@@ -90,6 +100,7 @@ class CommentBox extends Component {
     } else {
       this.submitNewComment();
     }
+    this.state.toxicity=0;
   }
 
   submitNewComment = () => {
@@ -144,6 +155,7 @@ class CommentBox extends Component {
           <CommentForm
             author={this.state.author}
             text={this.state.text}
+            handleChangeAuthor={this.onChangeAuthor}
             handleChangeText={this.onChangeText}
             submitComment={this.submitComment}
           />
