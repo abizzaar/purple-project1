@@ -19,7 +19,7 @@ const CommentForm = props => (
       value={props.text}
       onChange={props.handleChangeText}
     />
-    <button type="submit">Submit</button>
+    <button type="submit">Go!</button>
   </form>
 );
 
