@@ -1,4 +1,4 @@
-Pure Chat( Built by adding functionality to Facebook Comment Box with the MERN Stack)
+Pure Chat (Built by adding functionality to Facebook Comment Box with the MERN Stack)
 ===================
 
 [Link to Bryan Gilbraith's Tutorial](https://medium.com/@bryantheastronaut/ok-here-we-go-b9f683c5a00c)
