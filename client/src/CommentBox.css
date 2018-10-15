@@ -61,8 +61,19 @@
 }
 
 .singleCommentButtons {
-  padding-top: 5px;
+  padding-top: 7px;
+  display: flex;
+  justify-content: space-between;
 }
+
+.singleCommentButtons > div:first-child {
+  display: flex;
+}
+
+.singleCommentButtons > div:last-child {
+  display: flex;
+}
+
 
 .time {
   font-size: 10px;
@@ -73,7 +84,6 @@
 
 .singleCommentButtons a {
   margin: 0px 3px;;
-  padding-top: 10px;
   cursor: pointer;
   font-size: 10px;
   color: #385997;

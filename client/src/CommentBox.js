@@ -52,7 +52,6 @@ class CommentBox extends Component {
     const newState = { ...this.state };
     newState[e.target.name] = e.target.value;
     this.setState(newState);
-
     let comment = e.target.value;
     this.updateToxicity(comment);
   }
@@ -60,7 +59,7 @@ class CommentBox extends Component {
   onUpdateComment = (id) => {
     const oldComment = this.state.data.find(c => c._id === id);
     if (!oldComment) return;
-    this.setState({ author: oldComment.author, text: oldComment.text, updateId: id });
+    this.setState({ author: oldComment.author, text: oldComment.text, toxicity: oldComment.toxicity, updateId: id });
   }
 
   onDeleteComment = (id) => {
@@ -89,13 +88,13 @@ class CommentBox extends Component {
   }
 
   submitNewComment = () => {
-    const { author, text } = this.state;
-    const data = [...this.state.data, { author, text, _id: Date.now().toString() }];
+    const { author, text, toxicity } = this.state;
+    const data = [...this.state.data, { author, text, toxicity, _id: Date.now().toString() }];
     this.setState({ data });
     fetch('/api/comments', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ author, text }),
+      body: JSON.stringify({ author, text, toxicity}),
     }).then(res => res.json()).then((res) => {
       if (!res.success) this.setState({ error: res.error.message || res.error });
       else this.setState({ author: '', text: '', error: null });
@@ -103,11 +102,11 @@ class CommentBox extends Component {
   }
 
   submitUpdatedComment = () => {
-    const { author, text, updateId } = this.state;
+    const { author, text, toxicity, updateId } = this.state;
     fetch(`/api/comments/${updateId}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ author, text }),
+      body: JSON.stringify({ author, text, toxicity }),
     }).then(res => res.json()).then((res) => {
       if (!res.success) this.setState({ error: res.error.message || res.error });
       else this.setState({ author: '', text: '', updateId: null });
