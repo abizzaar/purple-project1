@@ -143,6 +143,7 @@ class CommentBox extends Component {
             handleChangeText={this.onChangeText}
             submitComment={this.submitComment}
           />
+          <span className="toxicity">toxicity: {this.state.toxicity}</span>
         </div>
         {this.state.error && <p>{this.state.error}</p>}
       </div>
