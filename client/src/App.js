@@ -20,7 +20,7 @@ class App extends Component {
   render() {
   return (
       <div className="app">
-        <Topic topic={this.data.topic} viewpoints={this.data.viewpoints}/> 
+        <Topic topic={this.data.topic} viewpoints={this.data.viewpoints}/>
         <CommentBox />
       </div>);
   }
