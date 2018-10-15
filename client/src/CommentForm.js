@@ -1,6 +1,7 @@
 // CommentForm.js
 import React from 'react';
 import PropTypes from 'prop-types';
+import ReactDOM from 'react-dom';
 
 const CommentForm = props => (
   <form onSubmit={props.submitComment}>
