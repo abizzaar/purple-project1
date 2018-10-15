@@ -38,7 +38,7 @@ router.get('/comments', (req, res) => {
 router.post('/comments', (req, res) => {
   const comment = new Comment();
   // body parser lets us use the req.body
-  const { author, text } = req.body;
+  const { author, text, toxicity } = req.body;
   if (!author || !text) {
     // we should throw an error. we can do this check on the front end
     return res.json({
@@ -48,6 +48,7 @@ router.post('/comments', (req, res) => {
   }
   comment.author = author;
   comment.text = text;
+  comment.toxicity = toxicity;
   comment.save(err => {
     if (err) return res.json({ success: false, error: err });
     return res.json({ success: true });
@@ -80,9 +81,10 @@ router.put('/comments/:commentId', (req, res) => {
   }
   Comment.findById(commentId, (error, comment) => {
     if (error) return res.json({ success: false, error });
-    const { author, text } = req.body;
+    const { author, text, toxicity } = req.body;
     if (author) comment.author = author;
     if (text) comment.text = text;
+    if (toxicity) comment.toxicity = toxicity;
     comment.save(error => {
       if (error) return res.json({ success: false, error });
       return res.json({ success: true });
