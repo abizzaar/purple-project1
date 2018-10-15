@@ -72,6 +72,17 @@
 
 .singleCommentButtons > div:last-child {
   display: flex;
+  font-size: 10px;
+  margin-left: 1rem;
+  font-weight: bold;
+}
+
+.blueColor {
+
+}
+
+.redColor {
+  
 }
 
 
