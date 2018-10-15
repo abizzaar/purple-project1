@@ -43,7 +43,7 @@ class CommentBox extends Component {
         this.state.toxicity = res.value;
         console.log(res.value);
       } else {
-        console.log("there was an issue getting the toxicity");
+        console.log("There was an issue getting the toxicity");
       }
     });
   }
@@ -128,7 +128,7 @@ class CommentBox extends Component {
     return (
       <div className="container">
         <div className="comments">
-          <h2>Comments:</h2>
+          <h2>Thoughts?</h2>
           <CommentList
             data={this.state.data}
             handleDeleteComment={this.onDeleteComment}

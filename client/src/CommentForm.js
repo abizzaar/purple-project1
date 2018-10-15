@@ -8,7 +8,7 @@ const CommentForm = props => (
     <input
       type="text"
       name="author"
-      placeholder="Your name"
+      placeholder="Enter your name"
       value={props.author}
       onChange={props.handleChangeText}
     />
