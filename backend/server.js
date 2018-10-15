@@ -6,7 +6,7 @@ import logger from 'morgan';
 import mongoose from 'mongoose';
 import { getSecret } from './secrets';
 import Comment from './models/comment';
-
+import fetch from 'isomorphic-fetch'
 
 // and create our instances
 const app = express();
@@ -53,7 +53,26 @@ router.post('/comments', (req, res) => {
     return res.json({ success: true });
   });
 });
-
+///////////////////
+router.post('/toxicity', (req, res) => {
+const {text}=req.body;
+console.log(text);
+var reqBody1 = "{comment: {text: \"";
+var reqBody2="\"},languages: [\"en\"],requestedAttributes: {TOXICITY:{}} }";
+var reqBody=reqBody1+text+reqBody2;
+fetch('https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=AIzaSyBwW-rzM_A6MF2G-mrGQixet1l55wzDabI', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: reqBody
+})
+.then((response) => response.json())
+    .then((responseJson) => {
+      console.log(responseJson.attributeScores.TOXICITY.summaryScore);
+	return res.json({ success: true, value: responseJson.attributeScores.TOXICITY.summaryScore.value });
+    })});
+///////////////////
 router.put('/comments/:commentId', (req, res) => {
   const { commentId } = req.params;
   if (!commentId) {
