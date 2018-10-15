@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CommentBox from './CommentBox';
+import Topic from './Topic';
 import { renderers } from '../node_modules/react-markdown';
 
 class App extends Component {
@@ -16,7 +17,11 @@ class App extends Component {
   }
 
   render() {
-  return (<CommentBox />);
+  return (
+      <div>
+        <Topic topic={this.data.topic} viewpoints={this.data.viewpoints}/> 
+        <CommentBox />
+      </div>);
   }
 }
 
