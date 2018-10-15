@@ -154,7 +154,8 @@
 
 .nav {
   padding: 8px;
-  background-color: #edeeef;
+  /* background-color: #edeeef; */
+  background-color: white;
   display: flex;
   justify-content: space-between;
 }
