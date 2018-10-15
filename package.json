@@ -26,6 +26,9 @@
     "mongoose": "^5.3.1",
     "morgan": "^1.9.1",
     "muicss": "^0.9.41",
-    "nodemon": "^1.18.4"
-  }
+    "nodemon": "^1.18.4",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
+  },
+  "devDependencies": {}
 }

@@ -4,6 +4,12 @@ import Topic from './Topic';
 import { renderers } from '../node_modules/react-markdown';
 import './CommentBox.css';
 
+const appbar = {
+  backgroundColor: "blue",
+  height: "4rem",
+  position: "relative"
+}
+
 class App extends Component {
   constructor() {
     super();
@@ -12,7 +18,7 @@ class App extends Component {
       "viewpoints":
         [
           "There’s not enough evidence on the side of the victims to not confirm Kavanaugh.",
-        "Kavanaugh should not be confirmed because he is a sexual offender and lied under oath."
+          "Kavanaugh should not be confirmed because he is a sexual offender and lied under oath."
         ]
     }
   }
