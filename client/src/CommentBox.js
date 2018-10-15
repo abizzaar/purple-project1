@@ -79,7 +79,7 @@ class CommentBox extends Component {
     e.preventDefault();
     const { author, text, updateId } = this.state;
     if (!author || !text) return window.confirm("Oops! You must've forgotten your name and comment!");
-    if (this.state.toxicity === 0.6) return window.confirm("Please revise your comment to decrease toxicity. We want to keep conversations productive and toxic-free. Happy PureChatting!");
+    if (this.state.toxicity >= 0.6) return window.confirm("Please revise your comment to decrease toxicity. We want to keep conversations productive and toxic-free. Happy PureChatting!");
     if (updateId) {
       this.submitUpdatedComment();
     } else {
@@ -142,6 +142,7 @@ class CommentBox extends Component {
             handleChangeText={this.onChangeText}
             submitComment={this.submitComment}
           />
+          <span className="toxicity">toxicity: {this.state.toxicity}</span>
         </div>
         {this.state.error && <p>{this.state.error}</p>}
       </div>
