@@ -12,7 +12,7 @@ class Topic extends Component {
   render() {
     let vps = [];
     for (let i = 0; i < this.viewpoints.length; i++) {
-      vps.push(<div key={i}>{this.viewpoints[i]}</div>)
+      vps.push(<div><span className="viewpoint">Viewpoint {i}: &nbsp;</span><span key={i}>{this.viewpoints[i]}</span></div>)
     };
     return (
       <div className="topicBox">

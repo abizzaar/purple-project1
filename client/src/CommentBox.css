@@ -48,9 +48,14 @@
 }
 
 .topicBox {
-  background-color: #414042;
+  background-color: #84d6ed;
   color: white;
   padding: 2rem 2rem;
+}
+
+.viewpoint {
+  font-weight: bold;
+  color: grey;
 }
 
 .singleCommentContent h3 {
@@ -93,7 +98,7 @@
 }
 
 .redColor {
-  
+
 }
 
 .time {
