@@ -33,7 +33,21 @@ class CommentBox extends Component {
   onChangeText = (e='') => {
     const newState = { ...this.state };
     newState[e.target.name] = e.target.value;
-    this.setState(newState);
+    fetch('/api/toxicity/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({text: e.target.value })
+    })
+    .then(res => res.json())
+    .then((res) => {
+      if (res.success) {
+        newState["toxicity"] = res.value;
+        this.setState(newState);
+        console.log(res.value);
+      } else {
+        console.log("there was an issue getting the toxicity");
+      }
+    });
   }
 
   onUpdateComment = (id) => {
