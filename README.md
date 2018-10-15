@@ -1,10 +1,11 @@
-Pure Chat (Built by adding functionality to Facebook Comment Box with the MERN Stack)
+PureChat 
 ===================
 
 [Link to Bryan Gilbraith's Tutorial](https://medium.com/@bryantheastronaut/ok-here-we-go-b9f683c5a00c)
 
 *MERN: a software stack of free and open-source JS software for web development consisting of MongoDB, Express.js, React.js, Node.js.*
 
+Built by adding functionality to Facebook Comment Box with the MERN Stack.
 
 Technologies Used:
 ---------
@@ -28,10 +29,7 @@ Technologies Used:
 Running the App:
 ---------
 
-`$ yarn start:server` will only start the backend server.
+To run the app, navigate to your terminal and type: `$ yarn start:dev` 
+This will start both the React web app and backend server simultaneously and will automatically open the webapp on your browser.
 
-`$ yarn start:client` will start the React app.
-
-`$ yarn start:dev` will start both the React web app and backend server both simultaneously.
-
-
+For the curious folk, if you want to only start the backend server: `$ yarn start:server`, and if you only want to start the React app: `$ yarn start:client`.
