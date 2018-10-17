@@ -29,7 +29,16 @@ Technologies Used:
 Running the App:
 ---------
 
-To run the app, navigate to your terminal and type: `$ yarn start:dev` 
+To run the app, navigate to your terminal and type: 
+```
+$ cd purple-project1/
+$ yarn
+$ cd client
+$ yarn
+$ cd ..
+
+$ yarn start:dev
+```
 This will start both the React web app and backend server simultaneously and will automatically open the webapp on your browser.
 
 For the curious folk, if you want to only start the backend server: `$ yarn start:server`, and if you only want to start the React app: `$ yarn start:client`.
